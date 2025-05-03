@@ -1,0 +1,17 @@
+ .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .product-card {
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        height: 100%;
+    }
+
+    .footer {
+        background-color: #f8f9fa;
+        padding: 1rem 0;
+    }

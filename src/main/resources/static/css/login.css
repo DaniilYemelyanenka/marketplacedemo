@@ -1,0 +1,20 @@
+body {
+            background-color: #f5f5f5;
+        }
+        .login-container {
+            margin-top: 10%;
+            max-width: 400px;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-icon {
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            color: #aaa;
+        }
+        .form-control {
+            padding-left: 35px;
+        }
