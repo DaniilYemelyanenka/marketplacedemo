@@ -1,6 +1,7 @@
 package by.yemelyanenko.marketplace.model;
 
 import by.yemelyanenko.marketplace.entity.User;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,6 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+@Getter
 public class MyUserDetails implements UserDetails {
 
     private User user;
@@ -50,5 +52,15 @@ public class MyUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof MyUserDetails other && user.getUsername().equals(other.getUsername());
+    }
+
+    @Override
+    public int hashCode() {
+        return user.getUsername().hashCode();
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -23,9 +23,21 @@
                     <i class="fa fa-user fa-lg"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><span class="dropdown-item-text" th:text="${user.username}">Имя пользователя</span></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" th:href="@{/logout}">Выйти</a></li>
+                    <!-- Проверяем, авторизован ли пользователь -->
+                    <li sec:authorize="isAuthenticated()">
+                        <span class="dropdown-item-text" th:text="${#authentication.name}">Имя пользователя</span>
+                    </li>
+                    <li sec:authorize="isAuthenticated()">
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" th:href="@{/logout}">Выйти</a>
+                    </li>
+                    <!-- Для неавторизованных пользователей отображаем кнопки входа и регистрации -->
+                    <li sec:authorize="isAnonymous()">
+                        <a class="dropdown-item" th:href="@{/login}">Войти</a>
+                    </li>
+                    <li sec:authorize="isAnonymous()">
+                        <a class="dropdown-item" th:href="@{/user/add}">Зарегистрироваться</a>
+                    </li>
                 </ul>
             </div>
 
