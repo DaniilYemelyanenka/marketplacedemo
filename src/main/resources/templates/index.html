@@ -16,54 +16,7 @@
 </head>
 <body>
 
-
-<!-- Header -->
-<header class="bg-light border-bottom py-3 fixed-top">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div class="logo">
-      <i class="fa fa-store"></i> Shop
-    </div>
-    <div class="d-flex align-items-center">
-
-      <!-- Cart Dropdown -->
-      <div class="dropdown me-4">
-        <a class="btn btn-light dropdown-toggle position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa fa-shopping-cart fa-lg"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                th:text="${cart.count}">0</span>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end p-3" style="min-width: 300px;">
-          <li th:if="${#lists.isEmpty(cart.items)}" class="text-muted small">Корзина пуста</li>
-          <li th:each="item : ${cart.items}" class="mb-2 border-bottom pb-2">
-            <div class="d-flex justify-content-between">
-              <span th:text="${item.name}">Товар</span>
-              <span th:text="${item.quantity} + ' x ₽' + ${item.price}">1 x ₽0.00</span>
-            </div>
-          </li>
-          <li class="mt-2 text-end">
-            <strong>Итого: <span th:text="'₽' + ${cart.total}">₽0.00</span></strong>
-          </li>
-          <li class="text-center mt-2">
-            <a th:href="@{/cart}" class="btn btn-primary btn-sm w-100">Перейти в корзину</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- User Dropdown -->
-      <div class="dropdown">
-        <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa fa-user fa-lg"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><span class="dropdown-item-text" th:text="${user.username}">Имя пользователя</span></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" th:href="@{/logout}">Выйти</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</header>
+<header th:replace="layout/header :: header"></header>
 
 <!-- Main -->
 <main class="container">
@@ -85,12 +38,7 @@
 </main>
 
 <!-- Footer -->
-<footer class="footer fixed-bottom">
-  <div class="container text-center text-muted small">
-    <p>© 2025 Интернет-магазин Shop. Все права защищены.</p>
-    <p>Контакты: support@example.com | +7 (000) 123-45-67</p>
-  </div>
-</footer>
+<footer th:replace="layout/footer::footer"></footer>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

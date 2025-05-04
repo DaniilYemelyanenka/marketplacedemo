@@ -3,6 +3,11 @@ body {
       padding-top: 100px;
     }
 
+    .logo, .fa-store {
+         color: #7aa3a3 !important;
+         font-weight: bold;
+       }
+
     .form-container {
       max-width: 500px;
       margin: 0 auto;
@@ -29,3 +34,8 @@ body {
     .form-label {
       font-weight: bold;
     }
+     .footer {
+             background-color: #dceeee;
+             padding: 1rem 0;
+             color: #6c757d;
+     }

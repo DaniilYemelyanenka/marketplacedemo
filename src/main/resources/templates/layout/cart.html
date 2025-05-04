@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="dropdown me-4" th:fragment="cart">
+    <a class="btn btn-light dropdown-toggle position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-shopping-cart fa-lg"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              th:text="${cart.count}">0</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end p-3" style="min-width: 300px;">
+        <li th:if="${#lists.isEmpty(cart.items)}" class="text-muted small">Корзина пуста</li>
+        <li th:each="item : ${cart.items}" class="mb-2 border-bottom pb-2">
+            <div class="d-flex justify-content-between">
+                <span th:text="${item.name}">Товар</span>
+                <span th:text="${item.quantity} + ' x ₽' + ${item.price}">1 x ₽0.00</span>
+            </div>
+        </li>
+        <li class="mt-2 text-end">
+            <strong>Итого: <span th:text="'₽' + ${cart.total}">₽0.00</span></strong>
+        </li>
+        <li class="text-center mt-2">
+            <a th:href="@{/cart}" class="btn btn-primary btn-sm w-100">Перейти в корзину</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
