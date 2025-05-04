@@ -15,11 +15,11 @@
         <li th:if="${#lists.isEmpty(cart.items)}" class="text-muted small">Корзина пуста</li>
         <li th:each="item : ${cart.items}" class="mb-2 border-bottom pb-2">
             <div class="d-flex justify-content-between">
-                <span th:text="${item.name}">Товар</span>
+                <span th:text="${item.productName}">Товар</span>
                 <span th:text="${item.quantity} + ' x ₽' + ${item.price}">1 x ₽0.00</span>
             </div>
         </li>
-        <li class="mt-2 text-end">
+        <li class="mt-2 text-end">6
             <strong>Итого: <span th:text="'₽' + ${cart.total}">₽0.00</span></strong>
         </li>
         <li class="text-center mt-2">

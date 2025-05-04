@@ -14,9 +14,9 @@ public class CartInfo {
     public void addItem(CartItemInfo item) {
         for (CartItemInfo existing : items) {
             if (existing.getProductId().equals(item.getProductId())) {
-                existing.setQuantity(item.getQuantity() + item.getQuantity());
+                existing.setQuantity(existing.getQuantity() + item.getQuantity());
+                return;
             }
-            return;
         }
         items.add(item);
     }
