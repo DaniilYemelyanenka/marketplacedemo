@@ -1,0 +1,56 @@
+   body {
+         background-color: #f8f9fa;
+         padding-top: 80px;   /* чтобы контент не перекрывался хэдером */
+         padding-bottom: 80px; /* чтобы не перекрывался футером */
+       }
+
+       .logo, .fa-store {
+         color: #7aa3a3 !important;
+         font-weight: bold;
+       }
+
+       .btn-primary, .btn-light, .btn {
+         background-color: #a5d5d5;
+         border-color: #a5d5d5;
+         color: #fff;
+       }
+
+       .btn-light {
+         background-color: #dceeee !important;
+         color: #333 !important;
+       }
+
+       .btn-primary:hover, .btn-light:hover {
+         background-color: #90caca !important;
+         border-color: #90caca;
+       }
+
+       .product-card {
+         box-shadow: 0 0 10px rgba(0,0,0,0.03);
+         border-radius: 10px;
+         padding: 0.8rem;
+         margin-bottom: 1.5rem;
+         text-align: center;
+         height: 280px;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+       }
+
+       .product-card img {
+          max-height: 200px;
+          width: 100%;
+          object-fit: contain;
+          border-radius: 8px;
+          margin-bottom: 0.5rem;
+       }
+
+       .footer {
+         background-color: #dceeee;
+         padding: 1rem 0;
+         color: #6c757d;
+       }
+
+       .badge {
+         font-size: 0.7rem;
+       }
